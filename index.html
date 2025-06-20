@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spidey’s Google API Storm</title>
+</head>
+<body>
+  <h2>Spidey’s Map Attack is in Progress...</h2>
+  <pre id="output">Waiting...</pre>
+
+  <script>
+    fetch('/attack')
+      .then(res => res.text())
+      .then(txt => {
+        document.getElementById("output").innerText = txt;
+      })
+      .catch(err => {
+        document.getElementById("output").innerText = "Error: " + err;
+      });
+  </script>
+</body>
+</html>
